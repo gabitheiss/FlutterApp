@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../screens/FavoritesScreen.dart';
+
 class DrawerWidget extends StatelessWidget {
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      key: _scaffoldKey,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -20,20 +26,21 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.message),
-            title: const Text('Mensagens'),
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
             onTap: () {},
           ),
           ListTile(
-            leading: const Icon(Icons.account_circle),
-            title: const Text('Perfil'),
+            leading: const Icon(Icons.shopping_cart),
+            title: const Text('Carrinho'),
             onTap: () {},
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Configurações'),
+            leading: const Icon(Icons.favorite),
+            title: const Text('Favoritos'),
             onTap: () {
-              // Ação ao clicar em Configurações
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => FavoritesScreen()));
             },
           ),
         ],
