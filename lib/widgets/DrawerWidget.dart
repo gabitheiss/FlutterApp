@@ -4,12 +4,9 @@ import '../screens/FavoritesScreen.dart';
 
 class DrawerWidget extends StatelessWidget {
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      key: _scaffoldKey,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
