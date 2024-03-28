@@ -6,6 +6,15 @@ import '../widgets/DrawerWidget.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+
+    IconData icon;
+    if (appState.favorites.contains(appState.current)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
@@ -37,6 +46,14 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Próxima'),
             ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              label: const Text('Favoritar'),
+              icon: Icon(icon),
+              onPressed: () {
+                appState.toggleFavorite();
+              },
+            ),
           ],
         ),
       ),
@@ -49,6 +66,17 @@ class MyAppState extends ChangeNotifier {
 
   void getNext() {
     current = WordPair.random();
+    notifyListeners();
+  }
+
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
     notifyListeners();
   }
 }
