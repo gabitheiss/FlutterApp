@@ -1,3 +1,4 @@
+import 'package:drawer_app/widgets/DrawerWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,13 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const Text('Favoritos'),
+        title: const Text('Carrinho'),
         titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
       ),
+      drawer: DrawerWidget(),
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../widgets/DrawerWidget.dart';
 import 'HomeScreen.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -16,6 +17,7 @@ class FavoritesScreen extends StatelessWidget {
           color: Colors.white,
         ),
       ),
+      drawer: DrawerWidget(),
       body: Center(
         child: appState.favorites.isEmpty
             ? const Column(
