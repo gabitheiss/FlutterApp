@@ -13,15 +13,8 @@ class DrawerWidget extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.teal,
-            ),
-            child: Text(
-              'Menu',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
+            decoration: BoxDecoration(color: Colors.teal),
+            child: Text('Menu', style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
           ListTile(
