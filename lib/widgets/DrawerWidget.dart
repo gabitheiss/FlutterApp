@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../screens/CartScreen.dart';
 import '../screens/FavoritesScreen.dart';
+import '../screens/HomeScreen.dart';
 
 class DrawerWidget extends StatelessWidget {
 
@@ -25,12 +27,18 @@ class DrawerWidget extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_cart),
             title: const Text('Carrinho'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.favorite),
